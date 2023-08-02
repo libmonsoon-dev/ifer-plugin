@@ -21,10 +21,20 @@
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>org.jetbrains.plugins.go</depends>
 
     <!-- Extension points defined by the plugin.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
     <extensions defaultExtensionNs="com.intellij">
 
     </extensions>
+    <actions>
+        <action id="com.github.libmonsoondev.ifer.actions.PasteAction"
+                class="com.github.libmonsoondev.ifer.actions.PasteAction" text="Paste Action"
+                description="Write if err != nil block">
+            <add-to-group group-id="PasteGroup" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="ctrl E"/>
+        </action>
+    </actions>
 </idea-plugin>
